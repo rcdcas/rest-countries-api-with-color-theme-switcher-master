@@ -1,0 +1,117 @@
+:root {
+  --Dark-Blue-Dark-Mode-Elements: hsl(209, 23%, 22%);
+  --Very-Dark-Blue-Dark-Mode-Background: hsl(207, 26%, 17%);
+  --Very-Dark-Blue-Light-Mode-Text: hsl(200, 15%, 8%);
+  --Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
+  --Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
+  --White-Dark-Mode-Text-Light-Mode-Elements: hsl(0, 0%, 100%);
+  --shadow-selected: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  font-size: 2rem;
+}
+
+p {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  font-size: 1rem;
+}
+
+body {
+  background-color: var(--Very-Dark-Blue-Dark-Mode-Background);
+  display: grid;
+  grid-template-rows: 7vh 10vh minmax(83vh, min-content);
+}
+
+.btn {
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  border: none;
+  color: #ffffff;
+  padding: 0.2rem 2rem;
+  border-radius: 5px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.main__header {
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: var(--shadow-selected);
+}
+
+.search__section {
+  margin: 0 5rem;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__input {
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--shadow-selected);
+}
+
+.search__options {
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  padding: 0.7rem 3rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--shadow-selected);
+}
+
+.main__section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.country__card {
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow-selected);
+  width: 20rem;
+  height: 25rem;
+}
+
+.card__description {
+  margin: 1rem;
+}
+
+.card__svg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__svg {
+  height: 15rem;
+}
+
+/*# sourceMappingURL=style.css.map */

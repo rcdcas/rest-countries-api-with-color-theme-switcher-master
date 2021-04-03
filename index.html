@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script src="./src/app.js" defer></script>
+  </head>
+  <body>
+    <template class="card__template">
+      <div class="country__card">
+        <div class="card__svg"><img src="" alt="" /></div>
+        <div class="card__description">
+          <h2 class="dst__country"></h2>
+          <p class="dst__population">Population: <span></span></p>
+          <p class="dst__region">Region: <span></span></p>
+          <p class="dst__capital">Capital: <span></span></p>
+        </div>
+      </div>
+    </template>
+    <header class="main__header">
+      <h1 class="header__title">Where in the world?</h1>
+      <button class="btn theme__button">Dark Mode</button>
+    </header>
+    <section class="search__section">
+      <form class="search__form">
+        <input
+          class="search__input"
+          type="text"
+          name="country"
+          placeholder="Search a country..."
+        />
+        <!-- <button>submit</button> -->
+      </form>
+      <select class="search__options" name="region">
+        <option value="">Filter by Region</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </section>
+    <main class="main__section">
+      <!-- <div class="country__card">
+        <div class="card__svg"><img src="./index.png" alt="" /></div>
+        <div class="card__description">
+          <h2>Brazil</h2>
+          <p>Population: 206,135,893</p>
+          <p>Region: Americas</p>
+          <p>Capital: Brasilia</p>
+        </div>
+      </div> -->
+    </main>
+  </body>
+</html>
