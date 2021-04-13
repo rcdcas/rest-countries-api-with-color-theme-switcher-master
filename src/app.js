@@ -83,3 +83,9 @@ const Module = (function () {
 Module.init();
 Module.searchSelection.addEventListener('change', Module.searchRegion);
 Module.searchForm.addEventListener('submit', Module.searchCountry);
+
+function sym(...args) {
+  args[0].filter((elem) => element);
+}
+
+sym([1, 2, 3], [5, 2, 1, 4]);
