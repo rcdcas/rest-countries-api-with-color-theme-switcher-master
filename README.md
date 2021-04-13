@@ -1,4 +1,4 @@
-# Live demo: (countryarea.netlify.app)
+# Live demo: https://countryarea.netlify.app/
 
 # Frontend Mentor - REST Countries API with color theme switcher
 
