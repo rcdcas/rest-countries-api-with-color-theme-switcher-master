@@ -36,36 +36,43 @@ const Module = (function () {
     main.append(nodeCard);
   }
 
-  async function init() {
-    const startCountrys = await doFetch('region/africa');
+  function init() {
+    const startCountrys = doFetch('region/africa');
     console.log(startCountrys);
-    startCountrys.forEach((startElement) => parseTemplate(startElement));
-  }
-
-  async function searchRegion(event) {
-    event.preventDefault();
-    const regionResult = await doFetch(`region/${event.target.value}`);
-    console.log(regionResult);
-    main.innerHTML = '';
-
-    regionResult.forEach((regionResultIndividual) =>
-      parseTemplate(regionResultIndividual)
+    startCountrys.then((response) =>
+      response.forEach((startElement) => parseTemplate(startElement))
     );
   }
 
-  async function searchCountry(event) {
+  function searchRegion(event) {
     event.preventDefault();
-    const countryResult = await doFetch(`name/${search.value}`);
+    const regionResult = doFetch(`region/${event.target.value}`);
+    console.log(regionResult);
     main.innerHTML = '';
-    countryResult.forEach((countryResultIndividual) =>
-      parseTemplate(countryResultIndividual)
+
+    regionResult.then((result) =>
+      result.forEach((regionResultIndividual) =>
+        parseTemplate(regionResultIndividual)
+      )
+    );
+  }
+
+  function searchCountry(event) {
+    event.preventDefault();
+    const countryResult = doFetch(`name/${search.value}`);
+    main.innerHTML = '';
+    countryResult.then((result) =>
+      result.forEach((countryResultIndividual) =>
+        parseTemplate(countryResultIndividual)
+      )
     );
   }
 
   async function doFetch(url = 'all') {
     try {
       const response = await fetch(`https://restcountries.eu/rest/v2/${url}`);
-      return response.json(); // parses JSON response into native JavaScript objects
+      const responseFinal = response.json();
+      return responseFinal;
     } catch (error) {
       console.log(error);
     }
@@ -83,9 +90,3 @@ const Module = (function () {
 Module.init();
 Module.searchSelection.addEventListener('change', Module.searchRegion);
 Module.searchForm.addEventListener('submit', Module.searchCountry);
-
-function sym(...args) {
-  args[0].filter((elem) => element);
-}
-
-sym([1, 2, 3], [5, 2, 1, 4]);
