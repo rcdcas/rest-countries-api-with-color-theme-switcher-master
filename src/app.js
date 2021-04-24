@@ -71,8 +71,7 @@ const Module = (function () {
   async function doFetch(url = 'all') {
     try {
       const response = await fetch(`https://restcountries.eu/rest/v2/${url}`);
-      const responseFinal = response.json();
-      return responseFinal;
+      return await response.json();
     } catch (error) {
       console.log(error);
     }
