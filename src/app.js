@@ -13,7 +13,7 @@ const Module = (function () {
     return nodeCard;
   }
 
-  function parseTemplate(DataCountry) {
+  function parseTemplate({ flag, demonym, population, region, capital }) {
     const nodeCard = cloneTemplate();
     const cardSvg = nodeCard.querySelector('.card__svg > img');
     const cardDescription = nodeCard.querySelector('.card__description');
@@ -28,11 +28,11 @@ const Module = (function () {
       '.dst__capital > span'
     );
 
-    cardSvg.src = DataCountry.flag;
-    countryDescription.textContent = DataCountry.demonym;
-    populationDescription.textContent = DataCountry.population.toLocaleString();
-    regionDescription.textContent = DataCountry.region;
-    capitalDescription.textContent = DataCountry.capital;
+    cardSvg.src = flag;
+    countryDescription.textContent = demonym;
+    populationDescription.textContent = population.toLocaleString();
+    regionDescription.textContent = region;
+    capitalDescription.textContent = capital;
     main.append(nodeCard);
   }
 
